@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 3491260348916537038}
   - component: {fileID: 1122740290158311284}
   - component: {fileID: 4803508605546637021}
-  - component: {fileID: 1831121274329119654}
+  - component: {fileID: 3830626449209940415}
+  - component: {fileID: 1366501559478019423}
   m_Layer: 0
   m_Name: Meteorito
   m_TagString: Untagged
@@ -138,18 +139,41 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1831121274329119654
-MonoBehaviour:
+--- !u!50 &3830626449209940415
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2419458882968268075}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!247 &1366501559478019423
+ConstantForce2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2419458882968268075}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65deab476a2855f42a46c98cff05d213, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Meteorito
-  velocidad: 10
-  rb_meteorito: {fileID: 0}
-  ZonaMeteoros: {fileID: 0}
+  m_Force: {x: 1, y: 0}
+  m_RelativeForce: {x: 0, y: 0}
+  m_Torque: 0

@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.WSA;
 
@@ -5,12 +6,11 @@ public class Meteorito : MonoBehaviour
 {
     public float velocidad = 2f;
 
-    public float aceleracion = 1f;
-
     public Rigidbody2D rb_meteorito;
 
     public BoxCollider2D ZonaMeteoros;
 
+    private Object GameObject;
 
     private void Start()
     {
@@ -34,10 +34,18 @@ public class Meteorito : MonoBehaviour
         rb_meteorito.linearVelocity = new Vector2(VelocidadX, 0) * velocidad;
     }
 
-    private void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        velocidad += aceleracion * Time.deltaTime;
-
-        rb_meteorito.linearVelocity = new Vector2(VelocidadX, 0) * velocidad;
+        if(collision.CompareTag("Nave"))
+        {
+            Destroy(this.GameObject);
+            Start();
+            float VelocidadX = velocidad;
+        }
+        else if (collision.CompareTag("ZonaDestruccion"))
+        {
+            Destroy(this.GameObject);
+            PosicionRandom();
+        }
     }
 }
