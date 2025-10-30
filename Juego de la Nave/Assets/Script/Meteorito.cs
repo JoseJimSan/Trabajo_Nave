@@ -36,7 +36,7 @@ public class Meteorito : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Nave"))
+        if (collision.CompareTag("Nave"))
         {
             Destroy(this.GameObject);
             Start();
@@ -46,6 +46,11 @@ public class Meteorito : MonoBehaviour
         {
             Destroy(this.GameObject);
             PosicionRandom();
+        }
+        else if (collision.CompareTag("bala"))
+        {
+            Destroy(this.GameObject);
+            Destroy(collision.gameObject);
         }
     }
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Nave
   - ZonaDestruccion
+  - bala
   layers:
   - Default
   - TransparentFX
