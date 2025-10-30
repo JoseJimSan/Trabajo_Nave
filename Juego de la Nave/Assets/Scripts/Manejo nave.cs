@@ -6,6 +6,7 @@ public class Manejonave : MonoBehaviour
     public Rigidbody2D rb_nave;
     float movimiento;
     Vector2 Posicion_inicial;
+    public Transform balaPrefab;
     // Update is called once per frame
 
 
@@ -23,6 +24,13 @@ public class Manejonave : MonoBehaviour
         rb_nave.linearVelocity = new Vector2(rb_nave.linearVelocityX, velocidad * movimiento);
 
         //transform.position *= new Vector3(0, movimiento * velocidad * Time.deltaTime, 0);
+        {
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                Instantiate(balaPrefab,this.transform.position,Quaternion.identity);
+            }
+
+        }
     }
 
     public void Reset()
