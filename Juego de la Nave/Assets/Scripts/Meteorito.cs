@@ -1,56 +1,43 @@
 using NUnit.Framework;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.WSA;
 
 public class Meteorito : MonoBehaviour
 {
     public float velocidad = 2f;
 
+    public float aceleracion = 0.5f;
+
     public Rigidbody2D rb_meteorito;
 
-    public BoxCollider2D ZonaMeteoros;
-
     public Object GameObject;
-
-    public float tiempoEntreSpawn;
 
     private void Start()
     {
         PosicionRandom();
-        Launch();
+       
     }
 
     void PosicionRandom()
     {
-        Bounds limites = ZonaMeteoros.bounds;
 
-        float y = Random.Range(limites.min.y, limites.max.y);
+        float posicionYRandom = Random.Range(-5, 5);
 
-        transform.position = new Vector3(-10, Mathf.Floor(y), 0);
-    }
-
-    void Launch()
-    {
-        float VelocidadX = velocidad;
-
-        rb_meteorito.linearVelocity = new Vector2(VelocidadX, 0) * velocidad;
-    }
-
-    private void Update()
-    {
-        InvokeRepeating("Meteorito", 1, tiempoEntreSpawn);
+        transform.position = new Vector3(-12, Mathf.Floor(posicionYRandom), 0);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Nave"))
         {
-            Start();
-            float VelocidadX = velocidad;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
         }
         else if (collision.CompareTag("ZonaDestruccion"))
         {
             PosicionRandom();
+            velocidad = 20f;
         }
         else if (collision.CompareTag("bala"))
         {

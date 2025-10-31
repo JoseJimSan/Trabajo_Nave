@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 4803508605546637021}
   - component: {fileID: 3830626449209940415}
   - component: {fileID: 1366501559478019423}
+  - component: {fileID: -1513528712547537559}
   m_Layer: 0
   m_Name: Meteorito
-  m_TagString: Untagged
+  m_TagString: Meteorito
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,7 +83,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 8029444451752118776, guid: f10561eda4ea91d4e979f6ff954909b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -131,7 +132,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.12, y: 1.13}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -154,7 +155,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -177,3 +178,19 @@ ConstantForce2D:
   m_Force: {x: 1, y: 0}
   m_RelativeForce: {x: 0, y: 0}
   m_Torque: 0
+--- !u!114 &-1513528712547537559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2419458882968268075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65deab476a2855f42a46c98cff05d213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Meteorito
+  velocidad: 2
+  aceleracion: 5
+  rb_meteorito: {fileID: 3830626449209940415}
+  GameObject: {fileID: 2419458882968268075}
