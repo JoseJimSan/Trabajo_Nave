@@ -7,6 +7,7 @@ TagManager:
   - Nave
   - ZonaDestruccion
   - bala
+  - Meteorito
   layers:
   - Default
   - TransparentFX

@@ -10,12 +10,15 @@ public class Meteorito : MonoBehaviour
 
     public BoxCollider2D ZonaMeteoros;
 
-    private Object GameObject;
+    public Object GameObject;
+
+    public float tiempoEntreSpawn;
 
     private void Start()
     {
         PosicionRandom();
         Launch();
+        InvokeRepeating("Meteorito", 1, tiempoEntreSpawn);
     }
 
     void PosicionRandom()

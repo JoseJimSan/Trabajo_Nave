@@ -171,6 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::bala
   velocidad: 10
   Rb_bala: {fileID: -6058892996643301467}
+  GameObject: {fileID: 8767823091021123512}
 --- !u!247 &2519477776803569181
 ConstantForce2D:
   m_ObjectHideFlags: 0
