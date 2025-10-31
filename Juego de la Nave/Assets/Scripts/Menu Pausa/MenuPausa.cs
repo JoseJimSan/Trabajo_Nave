@@ -28,16 +28,19 @@ public class MenuPausa : MonoBehaviour
     {
         Time.timeScale = 1f;
         Panel.SetActive(false);
+        inPause = false;
     }
     public void Resetear()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        inPause =false;
     }
 
     public void CambioEscena(string nombreEscena)
     {
         SceneManager.LoadScene(nombreEscena);
+        inPause = false;
     }
 
     public void Salir()
