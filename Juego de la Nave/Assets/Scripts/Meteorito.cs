@@ -18,7 +18,6 @@ public class Meteorito : MonoBehaviour
     {
         PosicionRandom();
         Launch();
-        InvokeRepeating("Meteorito", 1, tiempoEntreSpawn);
     }
 
     void PosicionRandom()
@@ -37,17 +36,20 @@ public class Meteorito : MonoBehaviour
         rb_meteorito.linearVelocity = new Vector2(VelocidadX, 0) * velocidad;
     }
 
+    private void Update()
+    {
+        InvokeRepeating("Meteorito", 1, tiempoEntreSpawn);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Nave"))
         {
-            Destroy(this.GameObject);
             Start();
             float VelocidadX = velocidad;
         }
         else if (collision.CompareTag("ZonaDestruccion"))
         {
-            Destroy(this.GameObject);
             PosicionRandom();
         }
         else if (collision.CompareTag("bala"))
